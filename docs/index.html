@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deep Research — Claude Code Skill for Documented Investigation</title>
-<meta name="description" content="A 7-phase meta-research skill for Claude Code. Stop ad-hoc Googling, start documented investigation. 280+ stat sources, 30+ APIs, 75 report blocks, weekly auto-validation.">
+<title data-i18n="meta.title">Deep Research — Claude Code Skill for Documented Investigation</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta.description" content="A 7-phase meta-research skill for Claude Code. Stop ad-hoc Googling, start documented investigation. 280+ stat sources, 30+ APIs, 75 report blocks, weekly auto-validation.">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Deep Research — Claude Code Skill">
@@ -151,6 +151,42 @@ code, pre, .mono { font-family: 'Space Mono', 'Courier New', monospace; }
   color: var(--ink);
   transform: translate(-2px, -2px);
   box-shadow: 4px 4px 0 var(--ink);
+}
+
+.lang-switch {
+  display: inline-flex;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.lang-switch button {
+  background: var(--paper);
+  color: var(--ink);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  letter-spacing: 0.05em;
+  transition: background 0.1s, color 0.1s;
+}
+
+.lang-switch button + button {
+  border-left: 2px solid var(--ink);
+}
+
+.lang-switch button:hover {
+  background: var(--yellow);
+}
+
+.lang-switch button.active {
+  background: var(--ink);
+  color: var(--paper);
 }
 
 /* ──────────────── LAYOUT ──────────────── */
@@ -920,26 +956,30 @@ footer a {
 <header class="topbar">
   <a href="#" class="topbar-brand">deep-research</a>
   <nav class="topbar-nav">
-    <a href="#how">how it works</a>
-    <a href="#inside">catalog</a>
-    <a href="#install">install</a>
-    <a href="#faq">faq</a>
+    <a href="#how" data-i18n="nav.how">how it works</a>
+    <a href="#inside" data-i18n="nav.catalog">catalog</a>
+    <a href="#install" data-i18n="nav.install">install</a>
+    <a href="#faq" data-i18n="nav.faq">faq</a>
   </nav>
-  <a href="https://github.com/ivanterescheenko-ai/claude-deep-research" class="topbar-cta">view on github →</a>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-lang-btn="en" class="active">EN</button>
+    <button type="button" data-lang-btn="ru">RU</button>
+  </div>
+  <a href="https://github.com/ivanterescheenko-ai/claude-deep-research" class="topbar-cta" data-i18n="nav.cta">view on github →</a>
 </header>
 
 <main>
 
 <!-- HERO -->
 <section class="hero">
-  <span class="hero-tag">§ claude code skill · v2.0 · MIT licensed</span>
-  <h1>
+  <span class="hero-tag" data-i18n="hero.tag">§ claude code skill · v2.0 · MIT licensed</span>
+  <h1 data-i18n-html="hero.h1">
     Stop ad-hoc<br>
     Googling. <br>
     Start <span class="marker">documented</span><br>
     <span class="underline-red">investigation.</span>
   </h1>
-  <p class="lede">
+  <p class="lede" data-i18n="hero.lede">
     A 7-phase meta-research skill for Claude Code. Hypothesis testing,
     parallel sub-agent search, source triangulation, adversarial review.
     Output is a folder you can return to a month later — every claim traces
@@ -947,67 +987,67 @@ footer a {
   </p>
 
   <div class="hero-ctas">
-    <a href="#install" class="btn btn-primary">install in 30s →</a>
-    <a href="https://github.com/ivanterescheenko-ai/claude-deep-research" class="btn btn-secondary">github</a>
+    <a href="#install" class="btn btn-primary" data-i18n="hero.cta_primary">install in 30s →</a>
+    <a href="https://github.com/ivanterescheenko-ai/claude-deep-research" class="btn btn-secondary" data-i18n="hero.cta_secondary">github</a>
   </div>
 
   <!-- KPI -->
   <div class="kpi-strip">
     <div class="kpi">
       <div class="kpi-num">7</div>
-      <div class="kpi-lbl">Workflow phases</div>
+      <div class="kpi-lbl" data-i18n="kpi.phases">Workflow phases</div>
     </div>
     <div class="kpi">
       <div class="kpi-num">29</div>
-      <div class="kpi-lbl">Search channels</div>
+      <div class="kpi-lbl" data-i18n="kpi.channels">Search channels</div>
     </div>
     <div class="kpi">
       <div class="kpi-num">75</div>
-      <div class="kpi-lbl">Report blocks</div>
+      <div class="kpi-lbl" data-i18n="kpi.blocks">Report blocks</div>
     </div>
     <div class="kpi">
       <div class="kpi-num">280+</div>
-      <div class="kpi-lbl">Stat sources</div>
+      <div class="kpi-lbl" data-i18n="kpi.sources">Stat sources</div>
     </div>
     <div class="kpi">
       <div class="kpi-num">30+</div>
-      <div class="kpi-lbl">API endpoints</div>
+      <div class="kpi-lbl" data-i18n="kpi.apis">API endpoints</div>
     </div>
   </div>
 </section>
 
 <!-- WHY -->
 <section id="why">
-  <span class="section-tag">§ 01 · methodology</span>
-  <h2 class="section-title">Why this exists</h2>
-  <p class="section-intro">
+  <span class="section-tag" data-i18n="why.tag">§ 01 · methodology</span>
+  <h2 class="section-title" data-i18n="why.title">Why this exists</h2>
+  <p class="section-intro" data-i18n="why.intro">
     Most AI research is one prompt, one wall of text, no way to verify or reuse.
     Deep Research turns that into a process you can audit.
   </p>
 
   <div class="compare">
     <div class="compare-col bad">
-      <span class="compare-col-stamp">REJECTED</span>
-      <h3>Without this</h3>
+      <span class="compare-col-stamp" data-i18n="why.bad_stamp">REJECTED</span>
+      <h3 data-i18n="why.bad_title">Without this</h3>
       <ul>
-        <li>One-shot prompt, no plan, no documented decisions</li>
-        <li>Sources lost in chat history — no return path</li>
-        <li>No way to detect confirmation bias</li>
-        <li>"Sources include..." — vague, unverifiable</li>
-        <li>Generic Google results, no methodology diversity</li>
-        <li>No reuse next research — start from zero</li>
+        <li data-i18n="why.bad_1">One-shot prompt, no plan, no documented decisions</li>
+        <li data-i18n="why.bad_2">Sources lost in chat history — no return path</li>
+        <li data-i18n="why.bad_3">No way to detect confirmation bias</li>
+        <li data-i18n="why.bad_4">"Sources include..." — vague, unverifiable</li>
+        <li data-i18n="why.bad_5">Generic Google results, no methodology diversity</li>
+        <li data-i18n="why.bad_6">No reuse next research — start from zero</li>
       </ul>
     </div>
     <div class="compare-col good">
-      <span class="compare-col-stamp">VERIFIED</span>
-      <h3>With this</h3>
+      <span class="compare-col-stamp" data-i18n="why.good_stamp">VERIFIED</span>
+      <h3 data-i18n="why.good_title">With this</h3>
       <ul>
-        <li>17-section <code>plan.md</code> documents every choice</li>
-        <li>Each source = file with verbatim quotes + scoring</li>
-        <li>Mandatory adversarial pass + opposition queries</li>
-        <li>Every claim → <code>[s12]</code> link → specific quote</li>
-        <li>29 named channels with paywall fallback protocols</li>
-        <li>Atomic theses in <code>findings/FN.md</code> — reusable</li>
+        <li data-i18n-html="why.good_1">17-section <code>plan.md</code> documents every choice</li>
+        <li data-i18n="why.good_2">Each source = file with verbatim quotes + scoring</li>
+        <li data-i18n="why.good_3">Mandatory adversarial pass + opposition queries</li>
+        <li data-i18n-html="why.good_4">Every claim → <code>[s12]</code> link → specific quote</li>
+        <li data-i18n="why.good_5">29 named channels with paywall fallback protocols</li>
+        <li data-i18n-html="why.good_6">Atomic theses in <code>findings/FN.md</code> — reusable</li>
       </ul>
     </div>
   </div>
@@ -1015,27 +1055,27 @@ footer a {
   <!-- DEMO TERMINAL -->
   <div class="demo">
     <div class="demo-header">
-      <span class="demo-header-tag">// session-log · claude-code · deep-research</span>
+      <span class="demo-header-tag" data-i18n="demo.header">// session-log · claude-code · deep-research</span>
     </div>
     <div class="demo-body">
-      <div class="demo-prompt">investigate trade-offs between Postgres logical replication and CDC tooling</div>
-      <div class="demo-line tick">Reframed: 3 falsifiable hypotheses formulated</div>
-      <div class="demo-line tick">Picked genre: decision (comparison + validation)</div>
-      <div class="demo-line tick">Wrote plan.md (17 sections, time-boxed: 2h)</div>
-      <div class="demo-line tick">Checked env: 4 APIs available, 2 fallback to HTML</div>
-      <div class="demo-line tick">Launched 4 parallel Explore sub-agents</div>
-      <div class="demo-line tick">Saved 23 sources to sources/ with quotes + scoring</div>
-      <div class="demo-line tick">Ran adversarial pass (3 steel-man counter-arguments)</div>
-      <div class="demo-line success">REPORT READY → research/postgres-replication-vs-cdc/2026-05-21_decision.md</div>
+      <div class="demo-prompt" data-i18n="demo.prompt">investigate trade-offs between Postgres logical replication and CDC tooling</div>
+      <div class="demo-line tick" data-i18n="demo.l1">Reframed: 3 falsifiable hypotheses formulated</div>
+      <div class="demo-line tick" data-i18n="demo.l2">Picked genre: decision (comparison + validation)</div>
+      <div class="demo-line tick" data-i18n="demo.l3">Wrote plan.md (17 sections, time-boxed: 2h)</div>
+      <div class="demo-line tick" data-i18n="demo.l4">Checked env: 4 APIs available, 2 fallback to HTML</div>
+      <div class="demo-line tick" data-i18n="demo.l5">Launched 4 parallel Explore sub-agents</div>
+      <div class="demo-line tick" data-i18n="demo.l6">Saved 23 sources to sources/ with quotes + scoring</div>
+      <div class="demo-line tick" data-i18n="demo.l7">Ran adversarial pass (3 steel-man counter-arguments)</div>
+      <div class="demo-line success" data-i18n="demo.success">REPORT READY → research/postgres-replication-vs-cdc/2026-05-21_decision.md</div>
     </div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
 <section id="how">
-  <span class="section-tag">§ 02 · workflow</span>
-  <h2 class="section-title">Seven phases.<br>Every one transparent.</h2>
-  <p class="section-intro">
+  <span class="section-tag" data-i18n="how.tag">§ 02 · workflow</span>
+  <h2 class="section-title" data-i18n-html="how.title">Seven phases.<br>Every one transparent.</h2>
+  <p class="section-intro" data-i18n-html="how.intro">
     Each phase has a defined output and a checkpoint. You confirm key decisions.
     The skill records what it chose and why in <code>plan.md</code>.
   </p>
@@ -1043,52 +1083,52 @@ footer a {
   <div class="pipeline">
     <div class="phase">
       <div class="phase-num">1</div>
-      <h3>Reframing</h3>
-      <p>Restates the question. Identifies the decision it supports. Formulates 2-4 falsifiable hypotheses.</p>
+      <h3 data-i18n="how.p1.title">Reframing</h3>
+      <p data-i18n="how.p1.desc">Restates the question. Identifies the decision it supports. Formulates 2-4 falsifiable hypotheses.</p>
     </div>
     <div class="phase">
       <div class="phase-num">2</div>
-      <h3>Genre</h3>
-      <p>Picks report type: qa, explainer, decision, landscape, validation, or custom.</p>
+      <h3 data-i18n="how.p2.title">Genre</h3>
+      <p data-i18n="how.p2.desc">Picks report type: qa, explainer, decision, landscape, validation, or custom.</p>
     </div>
     <div class="phase">
       <div class="phase-num">3</div>
-      <h3>Plan</h3>
-      <p>Writes plan.md with 17 sections: acceptance criteria, risk register, sourcing strategy.</p>
+      <h3 data-i18n="how.p3.title">Plan</h3>
+      <p data-i18n="how.p3.desc">Writes plan.md with 17 sections: acceptance criteria, risk register, sourcing strategy.</p>
     </div>
     <div class="phase">
       <div class="phase-num">3.5</div>
-      <h3>Capabilities</h3>
-      <p>Audits available API keys. Maps subtopics to data sources. Surfaces gaps before execution.</p>
+      <h3 data-i18n="how.p35.title">Capabilities</h3>
+      <p data-i18n="how.p35.desc">Audits available API keys. Maps subtopics to data sources. Surfaces gaps before execution.</p>
     </div>
     <div class="phase">
       <div class="phase-num">4</div>
-      <h3>Search</h3>
-      <p>Launches 2-5 parallel Explore sub-agents across 29 channels and 280+ stat sources.</p>
+      <h3 data-i18n="how.p4.title">Search</h3>
+      <p data-i18n="how.p4.desc">Launches 2-5 parallel Explore sub-agents across 29 channels and 280+ stat sources.</p>
     </div>
     <div class="phase">
       <div class="phase-num">5</div>
-      <h3>Score</h3>
-      <p>Each source rated Credibility/Recency/Bias. Every claim backed by ≥3 independent sources of different types.</p>
+      <h3 data-i18n="how.p5.title">Score</h3>
+      <p data-i18n="how.p5.desc">Each source rated Credibility/Recency/Bias. Every claim backed by ≥3 independent sources of different types.</p>
     </div>
     <div class="phase">
       <div class="phase-num">6</div>
-      <h3>Adversarial</h3>
-      <p>Self-critique with 4 opposition questions. Steel-man counter-arguments documented.</p>
+      <h3 data-i18n="how.p6.title">Adversarial</h3>
+      <p data-i18n="how.p6.desc">Self-critique with 4 opposition questions. Steel-man counter-arguments documented.</p>
     </div>
     <div class="phase">
       <div class="phase-num">7</div>
-      <h3>Synthesis</h3>
-      <p>Assembles final report from blocks. Writes findings/FN.md atomic theses for cross-research reuse.</p>
+      <h3 data-i18n="how.p7.title">Synthesis</h3>
+      <p data-i18n="how.p7.desc">Assembles final report from blocks. Writes findings/FN.md atomic theses for cross-research reuse.</p>
     </div>
   </div>
 </section>
 
 <!-- WHAT'S INSIDE -->
 <section id="inside">
-  <span class="section-tag">§ 03 · catalog</span>
-  <h2 class="section-title">A curated catalog.<br>Auto-validated weekly.</h2>
-  <p class="section-intro">
+  <span class="section-tag" data-i18n="inside.tag">§ 03 · catalog</span>
+  <h2 class="section-title" data-i18n-html="inside.title">A curated catalog.<br>Auto-validated weekly.</h2>
+  <p class="section-intro" data-i18n="inside.intro">
     280+ statistical sources, 30+ API endpoints, 29 named channels, 75 report blocks.
     Weekly cron in GitHub Actions validates endpoints and discovers upstream additions.
   </p>
@@ -1096,51 +1136,51 @@ footer a {
   <div class="features">
     <div class="feature">
       <span class="feature-tab">/blocks</span>
-      <div class="feature-num">75 / 10 categories</div>
-      <h3>Report Blocks</h3>
-      <p>Reusable sections with templates, anti-patterns, and composition rules. Each block has a fixed shape — you compose a report by naming the blocks it contains.</p>
+      <div class="feature-num" data-i18n="inside.f1.num">75 / 10 categories</div>
+      <h3 data-i18n="inside.f1.title">Report Blocks</h3>
+      <p data-i18n="inside.f1.desc">Reusable sections with templates, anti-patterns, and composition rules. Each block has a fixed shape — you compose a report by naming the blocks it contains.</p>
       <div class="feature-tags">
         <span class="feature-tag">tldr</span>
         <span class="feature-tag">mental-model</span>
         <span class="feature-tag">data-table</span>
         <span class="feature-tag">counter-arguments</span>
-        <span class="feature-tag muted">+71 more</span>
+        <span class="feature-tag muted" data-i18n="inside.f1.more">+71 more</span>
       </div>
     </div>
 
     <div class="feature">
       <span class="feature-tab">/channels</span>
-      <div class="feature-num">29 strategies</div>
-      <h3>Search Channels</h3>
-      <p>Named search strategies with query patterns and paywall fallback protocols. Each channel documents what it covers and where it breaks.</p>
+      <div class="feature-num" data-i18n="inside.f2.num">29 strategies</div>
+      <h3 data-i18n="inside.f2.title">Search Channels</h3>
+      <p data-i18n="inside.f2.desc">Named search strategies with query patterns and paywall fallback protocols. Each channel documents what it covers and where it breaks.</p>
       <div class="feature-tags">
         <span class="feature-tag">academic</span>
         <span class="feature-tag">preprint-servers</span>
         <span class="feature-tag">code-github</span>
         <span class="feature-tag">crypto-analytics</span>
-        <span class="feature-tag muted">+25 more</span>
+        <span class="feature-tag muted" data-i18n="inside.f2.more">+25 more</span>
       </div>
     </div>
 
     <div class="feature">
       <span class="feature-tab">/stat-sources</span>
-      <div class="feature-num">280+ sources · 33 categories</div>
-      <h3>Stat Sources</h3>
-      <p>Curated catalog with URL · Access · Quality · Limitations · Combine-with · Fallback. 14 cross-industry plus 19 specific industries.</p>
+      <div class="feature-num" data-i18n="inside.f3.num">280+ sources · 33 categories</div>
+      <h3 data-i18n="inside.f3.title">Stat Sources</h3>
+      <p data-i18n="inside.f3.desc">Curated catalog with URL · Access · Quality · Limitations · Combine-with · Fallback. 14 cross-industry plus 19 specific industries.</p>
       <div class="feature-tags">
         <span class="feature-tag">FRED</span>
         <span class="feature-tag">SEC EDGAR</span>
         <span class="feature-tag">WHO</span>
         <span class="feature-tag">CoinGecko</span>
-        <span class="feature-tag muted">+276 more</span>
+        <span class="feature-tag muted" data-i18n="inside.f3.more">+276 more</span>
       </div>
     </div>
 
     <div class="feature">
       <span class="feature-tab">/genres</span>
-      <div class="feature-num">6 + custom</div>
-      <h3>Report Types</h3>
-      <p>Genre defines structure. Five standard presets cover most cases. Custom assembles per question from the block library.</p>
+      <div class="feature-num" data-i18n="inside.f4.num">6 + custom</div>
+      <h3 data-i18n="inside.f4.title">Report Types</h3>
+      <p data-i18n="inside.f4.desc">Genre defines structure. Five standard presets cover most cases. Custom assembles per question from the block library.</p>
       <div class="feature-tags">
         <span class="feature-tag">qa</span>
         <span class="feature-tag">explainer</span>
@@ -1153,23 +1193,23 @@ footer a {
 
     <div class="feature">
       <span class="feature-tab">/api-sources</span>
-      <div class="feature-num">30+ endpoints</div>
-      <h3>API Catalog</h3>
-      <p>Free no-auth APIs prioritized. Auth via env vars only — skill never asks for keys inline. Documented fallback strategies.</p>
+      <div class="feature-num" data-i18n="inside.f5.num">30+ endpoints</div>
+      <h3 data-i18n="inside.f5.title">API Catalog</h3>
+      <p data-i18n="inside.f5.desc">Free no-auth APIs prioritized. Auth via env vars only — skill never asks for keys inline. Documented fallback strategies.</p>
       <div class="feature-tags">
         <span class="feature-tag">Semantic Scholar</span>
         <span class="feature-tag">OpenAlex</span>
         <span class="feature-tag">DefiLlama</span>
         <span class="feature-tag">PubMed</span>
-        <span class="feature-tag muted">+26 more</span>
+        <span class="feature-tag muted" data-i18n="inside.f5.more">+26 more</span>
       </div>
     </div>
 
     <div class="feature">
       <span class="feature-tab">/automation</span>
-      <div class="feature-num">weekly cron</div>
-      <h3>Auto-Validation</h3>
-      <p>GitHub Actions validates endpoints and discovers upstream awesome-list additions. Auto-PR for dead endpoints. Reports in a dedicated branch.</p>
+      <div class="feature-num" data-i18n="inside.f6.num">weekly cron</div>
+      <h3 data-i18n="inside.f6.title">Auto-Validation</h3>
+      <p data-i18n="inside.f6.desc">GitHub Actions validates endpoints and discovers upstream awesome-list additions. Auto-PR for dead endpoints. Reports in a dedicated branch.</p>
       <div class="feature-tags">
         <span class="feature-tag">HEAD checks</span>
         <span class="feature-tag">upstream sync</span>
@@ -1181,50 +1221,50 @@ footer a {
 
 <!-- INSTALL -->
 <section id="install">
-  <span class="section-tag">§ 04 · install</span>
-  <h2 class="section-title">Install in 30 seconds.</h2>
-  <p class="section-intro">
+  <span class="section-tag" data-i18n="install.tag">§ 04 · install</span>
+  <h2 class="section-title" data-i18n="install.title">Install in 30 seconds.</h2>
+  <p class="section-intro" data-i18n="install.intro">
     Works on Claude Code (CLI), Claude Desktop with Skills enabled, and any other LLM with manual context loading.
   </p>
 
   <div class="install-grid">
     <div class="install-card recommended">
-      <h4>// recommended</h4>
-      <h5>Claude Code (CLI)</h5>
+      <h4 data-i18n="install.c1.tag">// recommended</h4>
+      <h5 data-i18n="install.c1.title">Claude Code (CLI)</h5>
       <pre><code>git clone https://github.com/ivanterescheenko-ai/\
   claude-deep-research.git \
   ~/.claude/skills/deep-research</code></pre>
       <ul>
-        <li>Type "deep research" or /deep-research</li>
-        <li>Works across all projects</li>
-        <li>Auto-loads via progressive disclosure</li>
+        <li data-i18n="install.c1.b1">Type "deep research" or /deep-research</li>
+        <li data-i18n="install.c1.b2">Works across all projects</li>
+        <li data-i18n="install.c1.b3">Auto-loads via progressive disclosure</li>
       </ul>
     </div>
 
     <div class="install-card">
-      <h4>// .skill bundle</h4>
-      <h5>Claude Desktop</h5>
+      <h4 data-i18n="install.c2.tag">// .skill bundle</h4>
+      <h5 data-i18n="install.c2.title">Claude Desktop</h5>
       <pre><code>git clone ...
 cd claude-deep-research
 zip -r ../deep-research.skill . \
   -x ".*" -x "*.zip"</code></pre>
       <ul>
-        <li>Upload via Settings → Skills → Add</li>
-        <li>Appears in Customize panel</li>
-        <li>Triggers same as CLI</li>
+        <li data-i18n="install.c2.b1">Upload via Settings → Skills → Add</li>
+        <li data-i18n="install.c2.b2">Appears in Customize panel</li>
+        <li data-i18n="install.c2.b3">Triggers same as CLI</li>
       </ul>
     </div>
 
     <div class="install-card">
-      <h4>// manual load</h4>
-      <h5>Other LLMs</h5>
+      <h4 data-i18n="install.c3.tag">// manual load</h4>
+      <h5 data-i18n="install.c3.title">Other LLMs</h5>
       <pre><code># Load SKILL.md + references/*.md
 # into context manually
 # ~70% LLM-agnostic markdown</code></pre>
       <ul>
-        <li>Codex, Gemini, local models</li>
-        <li>Sub-agents → separate chat sessions</li>
-        <li>PRs welcome for adapters</li>
+        <li data-i18n="install.c3.b1">Codex, Gemini, local models</li>
+        <li data-i18n="install.c3.b2">Sub-agents → separate chat sessions</li>
+        <li data-i18n="install.c3.b3">PRs welcome for adapters</li>
       </ul>
     </div>
   </div>
@@ -1232,43 +1272,43 @@ zip -r ../deep-research.skill . \
 
 <!-- FAQ -->
 <section id="faq">
-  <span class="section-tag">§ 05 · questions</span>
-  <h2 class="section-title">Frequently asked.</h2>
+  <span class="section-tag" data-i18n="faq.tag">§ 05 · questions</span>
+  <h2 class="section-title" data-i18n="faq.title">Frequently asked.</h2>
 
   <div class="faq">
     <div class="faq-item">
-      <div class="faq-question">How is this different from ChatGPT Deep Research or Perplexity?</div>
-      <div class="faq-answer">
+      <div class="faq-question" data-i18n="faq.q1">How is this different from ChatGPT Deep Research or Perplexity?</div>
+      <div class="faq-answer" data-i18n="faq.a1">
         Those are products — closed UI, fixed flow, opaque source selection. This is open methodology — you control every step, the protocol is markdown you can fork, the source catalog is yours to extend. ChatGPT and Perplexity also don't separate sources into files, don't do explicit triangulation, don't run adversarial passes, and don't produce reusable atomic theses.
       </div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">Does it work without Claude Code CLI?</div>
-      <div class="faq-answer">
+      <div class="faq-question" data-i18n="faq.q2">Does it work without Claude Code CLI?</div>
+      <div class="faq-answer" data-i18n="faq.a2">
         Yes — on Claude Desktop with Skills enabled. Also works manually with any LLM by loading the markdown files into context. Sub-agent parallelism needs to be simulated with separate chat sessions per subtopic.
       </div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">Why so many files? Isn't this overkill?</div>
-      <div class="faq-answer">
+      <div class="faq-question" data-i18n="faq.q3">Why so many files? Isn't this overkill?</div>
+      <div class="faq-answer" data-i18n-html="faq.a3">
         For a 5-minute "what's the latest X" question — yes. That's why <code>shallow</code> mode exists (5-7 sources, no sub-agents, ~15 min). The full machinery is for <code>medium</code> (1 hour) and <code>deep</code> (3 hours) when you need to use the output for a decision. The file-per-source structure is the reuse mechanism — a single research often informs 3-5 future researches.
       </div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">What if I don't have CLAUDE.md or a project context?</div>
-      <div class="faq-answer">
+      <div class="faq-question" data-i18n="faq.q4">What if I don't have CLAUDE.md or a project context?</div>
+      <div class="faq-answer" data-i18n-html="faq.a4">
         The skill detects context in 3 tiers: explicit (CLAUDE.md research_root setting) → autodetect (pyproject.toml, package.json) → fallback (<code>~/deep-research/</code>). No project, no problem.
       </div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">Is this just prompt engineering?</div>
-      <div class="faq-answer">
+      <div class="faq-question" data-i18n="faq.q5">Is this just prompt engineering?</div>
+      <div class="faq-answer" data-i18n="faq.a5">
         It's structured methodology plus a curated catalog plus reusable templates plus automation. The 7-phase workflow forces discipline. 280+ stat sources is curated knowledge. 75 reusable blocks compose any report shape. Weekly auto-validation keeps the catalog alive. 25+ upstream awesome-lists give a discovery layer. Prompts are an implementation detail, not the value.
       </div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">Can I use this commercially?</div>
-      <div class="faq-answer">
+      <div class="faq-question" data-i18n="faq.q6">Can I use this commercially?</div>
+      <div class="faq-answer" data-i18n="faq.a6">
         Yes — MIT licensed. Use it, modify it, integrate it into products. Attribution appreciated but not required.
       </div>
     </div>
@@ -1276,17 +1316,17 @@ zip -r ../deep-research.skill . \
 
   <!-- CTA -->
   <div class="cta">
-    <h2>
+    <h2 data-i18n-html="cta.title">
       Star it.<br>
       <span class="marker">Use it.</span><br>
       Extend it.
     </h2>
-    <p>
+    <p data-i18n="cta.desc">
       The catalog grows through contributions. Easiest path: add a stat source you know to the right industry file. 15-minute PRs welcome.
     </p>
     <div class="cta-buttons">
-      <a href="https://github.com/ivanterescheenko-ai/claude-deep-research" class="btn btn-primary">star on github</a>
-      <a href="https://github.com/ivanterescheenko-ai/claude-deep-research/blob/main/CONTRIBUTING.md" class="btn btn-secondary">how to contribute</a>
+      <a href="https://github.com/ivanterescheenko-ai/claude-deep-research" class="btn btn-primary" data-i18n="cta.btn_primary">star on github</a>
+      <a href="https://github.com/ivanterescheenko-ai/claude-deep-research/blob/main/CONTRIBUTING.md" class="btn btn-secondary" data-i18n="cta.btn_secondary">how to contribute</a>
     </div>
   </div>
 </section>
@@ -1294,16 +1334,365 @@ zip -r ../deep-research.skill . \
 </main>
 
 <footer>
-  DEEP-RESEARCH v2.0 · Built by ivanterescheenko-ai · MIT Licensed
+  <span data-i18n="footer.line1">DEEP-RESEARCH v2.0 · Built by ivanterescheenko-ai · MIT Licensed</span>
   <br>
   <a href="https://github.com/ivanterescheenko-ai/claude-deep-research">GitHub</a> ·
-  <a href="https://github.com/ivanterescheenko-ai/claude-deep-research/blob/main/SKILL.md">Skill spec</a> ·
-  <a href="https://github.com/ivanterescheenko-ai/claude-deep-research/blob/main/CONTRIBUTING.md">Contributing</a> ·
-  <a href="https://github.com/ivanterescheenko-ai/claude-deep-research/issues">Issues</a>
+  <a href="https://github.com/ivanterescheenko-ai/claude-deep-research/blob/main/SKILL.md" data-i18n="footer.spec">Skill spec</a> ·
+  <a href="https://github.com/ivanterescheenko-ai/claude-deep-research/blob/main/CONTRIBUTING.md" data-i18n="footer.contrib">Contributing</a> ·
+  <a href="https://github.com/ivanterescheenko-ai/claude-deep-research/issues" data-i18n="footer.issues">Issues</a>
 </footer>
 
 <script>
-  // FAQ toggle
+  // ──────────────── i18n ────────────────
+  const translations = {
+    en: {
+      'meta.title': 'Deep Research — Claude Code Skill for Documented Investigation',
+      'meta.description': 'A 7-phase meta-research skill for Claude Code. Stop ad-hoc Googling, start documented investigation. 280+ stat sources, 30+ APIs, 75 report blocks, weekly auto-validation.',
+
+      'nav.how': 'how it works',
+      'nav.catalog': 'catalog',
+      'nav.install': 'install',
+      'nav.faq': 'faq',
+      'nav.cta': 'view on github →',
+
+      'hero.tag': '§ claude code skill · v2.0 · MIT licensed',
+      'hero.h1': 'Stop ad-hoc<br>Googling. <br>Start <span class="marker">documented</span><br><span class="underline-red">investigation.</span>',
+      'hero.lede': 'A 7-phase meta-research skill for Claude Code. Hypothesis testing, parallel sub-agent search, source triangulation, adversarial review. Output is a folder you can return to a month later — every claim traces to a source file with quotes and scoring.',
+      'hero.cta_primary': 'install in 30s →',
+      'hero.cta_secondary': 'github',
+
+      'kpi.phases': 'Workflow phases',
+      'kpi.channels': 'Search channels',
+      'kpi.blocks': 'Report blocks',
+      'kpi.sources': 'Stat sources',
+      'kpi.apis': 'API endpoints',
+
+      'why.tag': '§ 01 · methodology',
+      'why.title': 'Why this exists',
+      'why.intro': 'Most AI research is one prompt, one wall of text, no way to verify or reuse. Deep Research turns that into a process you can audit.',
+      'why.bad_stamp': 'REJECTED',
+      'why.bad_title': 'Without this',
+      'why.bad_1': 'One-shot prompt, no plan, no documented decisions',
+      'why.bad_2': 'Sources lost in chat history — no return path',
+      'why.bad_3': 'No way to detect confirmation bias',
+      'why.bad_4': '"Sources include..." — vague, unverifiable',
+      'why.bad_5': 'Generic Google results, no methodology diversity',
+      'why.bad_6': 'No reuse next research — start from zero',
+      'why.good_stamp': 'VERIFIED',
+      'why.good_title': 'With this',
+      'why.good_1': '17-section <code>plan.md</code> documents every choice',
+      'why.good_2': 'Each source = file with verbatim quotes + scoring',
+      'why.good_3': 'Mandatory adversarial pass + opposition queries',
+      'why.good_4': 'Every claim → <code>[s12]</code> link → specific quote',
+      'why.good_5': '29 named channels with paywall fallback protocols',
+      'why.good_6': 'Atomic theses in <code>findings/FN.md</code> — reusable',
+
+      'demo.header': '// session-log · claude-code · deep-research',
+      'demo.prompt': 'investigate trade-offs between Postgres logical replication and CDC tooling',
+      'demo.l1': 'Reframed: 3 falsifiable hypotheses formulated',
+      'demo.l2': 'Picked genre: decision (comparison + validation)',
+      'demo.l3': 'Wrote plan.md (17 sections, time-boxed: 2h)',
+      'demo.l4': 'Checked env: 4 APIs available, 2 fallback to HTML',
+      'demo.l5': 'Launched 4 parallel Explore sub-agents',
+      'demo.l6': 'Saved 23 sources to sources/ with quotes + scoring',
+      'demo.l7': 'Ran adversarial pass (3 steel-man counter-arguments)',
+      'demo.success': 'REPORT READY → research/postgres-replication-vs-cdc/2026-05-21_decision.md',
+
+      'how.tag': '§ 02 · workflow',
+      'how.title': 'Seven phases.<br>Every one transparent.',
+      'how.intro': 'Each phase has a defined output and a checkpoint. You confirm key decisions. The skill records what it chose and why in <code>plan.md</code>.',
+      'how.p1.title': 'Reframing',
+      'how.p1.desc': 'Restates the question. Identifies the decision it supports. Formulates 2-4 falsifiable hypotheses.',
+      'how.p2.title': 'Genre',
+      'how.p2.desc': 'Picks report type: qa, explainer, decision, landscape, validation, or custom.',
+      'how.p3.title': 'Plan',
+      'how.p3.desc': 'Writes plan.md with 17 sections: acceptance criteria, risk register, sourcing strategy.',
+      'how.p35.title': 'Capabilities',
+      'how.p35.desc': 'Audits available API keys. Maps subtopics to data sources. Surfaces gaps before execution.',
+      'how.p4.title': 'Search',
+      'how.p4.desc': 'Launches 2-5 parallel Explore sub-agents across 29 channels and 280+ stat sources.',
+      'how.p5.title': 'Score',
+      'how.p5.desc': 'Each source rated Credibility/Recency/Bias. Every claim backed by ≥3 independent sources of different types.',
+      'how.p6.title': 'Adversarial',
+      'how.p6.desc': 'Self-critique with 4 opposition questions. Steel-man counter-arguments documented.',
+      'how.p7.title': 'Synthesis',
+      'how.p7.desc': 'Assembles final report from blocks. Writes findings/FN.md atomic theses for cross-research reuse.',
+
+      'inside.tag': '§ 03 · catalog',
+      'inside.title': 'A curated catalog.<br>Auto-validated weekly.',
+      'inside.intro': '280+ statistical sources, 30+ API endpoints, 29 named channels, 75 report blocks. Weekly cron in GitHub Actions validates endpoints and discovers upstream additions.',
+      'inside.f1.num': '75 / 10 categories',
+      'inside.f1.title': 'Report Blocks',
+      'inside.f1.desc': 'Reusable sections with templates, anti-patterns, and composition rules. Each block has a fixed shape — you compose a report by naming the blocks it contains.',
+      'inside.f1.more': '+71 more',
+      'inside.f2.num': '29 strategies',
+      'inside.f2.title': 'Search Channels',
+      'inside.f2.desc': 'Named search strategies with query patterns and paywall fallback protocols. Each channel documents what it covers and where it breaks.',
+      'inside.f2.more': '+25 more',
+      'inside.f3.num': '280+ sources · 33 categories',
+      'inside.f3.title': 'Stat Sources',
+      'inside.f3.desc': 'Curated catalog with URL · Access · Quality · Limitations · Combine-with · Fallback. 14 cross-industry plus 19 specific industries.',
+      'inside.f3.more': '+276 more',
+      'inside.f4.num': '6 + custom',
+      'inside.f4.title': 'Report Types',
+      'inside.f4.desc': 'Genre defines structure. Five standard presets cover most cases. Custom assembles per question from the block library.',
+      'inside.f5.num': '30+ endpoints',
+      'inside.f5.title': 'API Catalog',
+      'inside.f5.desc': 'Free no-auth APIs prioritized. Auth via env vars only — skill never asks for keys inline. Documented fallback strategies.',
+      'inside.f5.more': '+26 more',
+      'inside.f6.num': 'weekly cron',
+      'inside.f6.title': 'Auto-Validation',
+      'inside.f6.desc': 'GitHub Actions validates endpoints and discovers upstream awesome-list additions. Auto-PR for dead endpoints. Reports in a dedicated branch.',
+
+      'install.tag': '§ 04 · install',
+      'install.title': 'Install in 30 seconds.',
+      'install.intro': 'Works on Claude Code (CLI), Claude Desktop with Skills enabled, and any other LLM with manual context loading.',
+      'install.c1.tag': '// recommended',
+      'install.c1.title': 'Claude Code (CLI)',
+      'install.c1.b1': 'Type "deep research" or /deep-research',
+      'install.c1.b2': 'Works across all projects',
+      'install.c1.b3': 'Auto-loads via progressive disclosure',
+      'install.c2.tag': '// .skill bundle',
+      'install.c2.title': 'Claude Desktop',
+      'install.c2.b1': 'Upload via Settings → Skills → Add',
+      'install.c2.b2': 'Appears in Customize panel',
+      'install.c2.b3': 'Triggers same as CLI',
+      'install.c3.tag': '// manual load',
+      'install.c3.title': 'Other LLMs',
+      'install.c3.b1': 'Codex, Gemini, local models',
+      'install.c3.b2': 'Sub-agents → separate chat sessions',
+      'install.c3.b3': 'PRs welcome for adapters',
+
+      'faq.tag': '§ 05 · questions',
+      'faq.title': 'Frequently asked.',
+      'faq.q1': 'How is this different from ChatGPT Deep Research or Perplexity?',
+      'faq.a1': "Those are products — closed UI, fixed flow, opaque source selection. This is open methodology — you control every step, the protocol is markdown you can fork, the source catalog is yours to extend. ChatGPT and Perplexity also don't separate sources into files, don't do explicit triangulation, don't run adversarial passes, and don't produce reusable atomic theses.",
+      'faq.q2': 'Does it work without Claude Code CLI?',
+      'faq.a2': 'Yes — on Claude Desktop with Skills enabled. Also works manually with any LLM by loading the markdown files into context. Sub-agent parallelism needs to be simulated with separate chat sessions per subtopic.',
+      'faq.q3': "Why so many files? Isn't this overkill?",
+      'faq.a3': 'For a 5-minute "what\'s the latest X" question — yes. That\'s why <code>shallow</code> mode exists (5-7 sources, no sub-agents, ~15 min). The full machinery is for <code>medium</code> (1 hour) and <code>deep</code> (3 hours) when you need to use the output for a decision. The file-per-source structure is the reuse mechanism — a single research often informs 3-5 future researches.',
+      'faq.q4': "What if I don't have CLAUDE.md or a project context?",
+      'faq.a4': 'The skill detects context in 3 tiers: explicit (CLAUDE.md research_root setting) → autodetect (pyproject.toml, package.json) → fallback (<code>~/deep-research/</code>). No project, no problem.',
+      'faq.q5': 'Is this just prompt engineering?',
+      'faq.a5': "It's structured methodology plus a curated catalog plus reusable templates plus automation. The 7-phase workflow forces discipline. 280+ stat sources is curated knowledge. 75 reusable blocks compose any report shape. Weekly auto-validation keeps the catalog alive. 25+ upstream awesome-lists give a discovery layer. Prompts are an implementation detail, not the value.",
+      'faq.q6': 'Can I use this commercially?',
+      'faq.a6': 'Yes — MIT licensed. Use it, modify it, integrate it into products. Attribution appreciated but not required.',
+
+      'cta.title': 'Star it.<br><span class="marker">Use it.</span><br>Extend it.',
+      'cta.desc': 'The catalog grows through contributions. Easiest path: add a stat source you know to the right industry file. 15-minute PRs welcome.',
+      'cta.btn_primary': 'star on github',
+      'cta.btn_secondary': 'how to contribute',
+
+      'footer.line1': 'DEEP-RESEARCH v2.0 · Built by ivanterescheenko-ai · MIT Licensed',
+      'footer.spec': 'Skill spec',
+      'footer.contrib': 'Contributing',
+      'footer.issues': 'Issues',
+    },
+    ru: {
+      'meta.title': 'Deep Research — навык Claude Code для задокументированного исследования',
+      'meta.description': 'Навык meta-research для Claude Code из 7 фаз. Не ад-хок поиск в Google, а исследование с источниками. 280+ статистических источников, 30+ API, 75 блоков отчёта, авто-валидация раз в неделю.',
+
+      'nav.how': 'как работает',
+      'nav.catalog': 'каталог',
+      'nav.install': 'установка',
+      'nav.faq': 'faq',
+      'nav.cta': 'открыть на github →',
+
+      'hero.tag': '§ навык claude code · v2.0 · лицензия MIT',
+      'hero.h1': 'Хватит<br>ад-хок гуглить. <br>Начни <span class="marker">задокументированное</span><br><span class="underline-red">исследование.</span>',
+      'hero.lede': 'Навык meta-research для Claude Code из 7 фаз. Проверка гипотез, параллельный поиск суб-агентами, триангуляция источников, adversarial review. На выходе — папка, к которой можно вернуться через месяц: каждое утверждение ведёт к файлу-источнику с цитатами и оценкой.',
+      'hero.cta_primary': 'установить за 30 секунд →',
+      'hero.cta_secondary': 'github',
+
+      'kpi.phases': 'фаз workflow',
+      'kpi.channels': 'каналов поиска',
+      'kpi.blocks': 'блоков отчёта',
+      'kpi.sources': 'стат-источников',
+      'kpi.apis': 'API endpoints',
+
+      'why.tag': '§ 01 · методология',
+      'why.title': 'Зачем это нужно',
+      'why.intro': 'Обычный AI-research — один промпт, одна простыня текста, ни проверить, ни переиспользовать. Deep Research превращает это в процесс, который можно проверить.',
+      'why.bad_stamp': 'ОТКЛОНЕНО',
+      'why.bad_title': 'Без этого',
+      'why.bad_1': 'Один промпт, без плана и задокументированных решений',
+      'why.bad_2': 'Источники теряются в истории чата — обратно не вернуться',
+      'why.bad_3': 'Никак не отловить confirmation bias',
+      'why.bad_4': '«В источниках включены…» — расплывчато, не проверяемо',
+      'why.bad_5': 'Общие результаты Google, никакого разнообразия методов',
+      'why.bad_6': 'Следующий ресёрч — снова с нуля',
+      'why.good_stamp': 'ПРОВЕРЕНО',
+      'why.good_title': 'С этим',
+      'why.good_1': '<code>plan.md</code> из 17 секций фиксирует каждый выбор',
+      'why.good_2': 'Каждый источник = файл с дословными цитатами и оценкой',
+      'why.good_3': 'Обязательный adversarial pass + запросы оппозиции',
+      'why.good_4': 'Каждое утверждение → ссылка <code>[s12]</code> → конкретная цитата',
+      'why.good_5': '29 именованных каналов с paywall fallback-протоколами',
+      'why.good_6': 'Атомарные тезисы в <code>findings/FN.md</code> — переиспользуемые',
+
+      'demo.header': '// session-log · claude-code · deep-research',
+      'demo.prompt': 'разбери компромиссы между логической репликацией Postgres и CDC-инструментами',
+      'demo.l1': 'Переформулировано: сформулировано 3 опровергаемых гипотезы',
+      'demo.l2': 'Выбран жанр: decision (сравнение + валидация)',
+      'demo.l3': 'Записан plan.md (17 секций, time-box: 2 часа)',
+      'demo.l4': 'Проверено окружение: 4 API доступны, 2 fallback в HTML',
+      'demo.l5': 'Запущены 4 параллельных Explore-агента',
+      'demo.l6': 'Сохранено 23 источника в sources/ с цитатами и оценками',
+      'demo.l7': 'Прогнан adversarial pass (3 steel-man контр-аргумента)',
+      'demo.success': 'ОТЧЁТ ГОТОВ → research/postgres-replication-vs-cdc/2026-05-21_decision.md',
+
+      'how.tag': '§ 02 · workflow',
+      'how.title': 'Семь фаз.<br>Каждая прозрачна.',
+      'how.intro': 'У каждой фазы — свой output и контрольная точка. Ключевые решения ты подтверждаешь сам. Что и почему выбрал — скилл записывает в <code>plan.md</code>.',
+      'how.p1.title': 'Reframing',
+      'how.p1.desc': 'Переформулирует вопрос. Находит решение, которое он поддерживает. Формулирует 2–4 опровергаемых гипотезы.',
+      'how.p2.title': 'Genre',
+      'how.p2.desc': 'Выбирает тип отчёта: qa, explainer, decision, landscape, validation или custom.',
+      'how.p3.title': 'Plan',
+      'how.p3.desc': 'Пишет plan.md из 17 секций: критерии приёмки, реестр рисков, стратегия сорсинга.',
+      'how.p35.title': 'Capabilities',
+      'how.p35.desc': 'Аудит доступных API-ключей. Подвопросы → источники. Подсвечивает пробелы до запуска.',
+      'how.p4.title': 'Search',
+      'how.p4.desc': 'Запускает 2–5 параллельных Explore-агентов по 29 каналам и 280+ стат-источникам.',
+      'how.p5.title': 'Score',
+      'how.p5.desc': 'Каждый источник оценивается по Credibility/Recency/Bias. Каждое утверждение — ≥3 независимых источника разного типа.',
+      'how.p6.title': 'Adversarial',
+      'how.p6.desc': 'Самокритика по 4 контр-вопросам. Steel-man контр-аргументы фиксируются в отчёте.',
+      'how.p7.title': 'Synthesis',
+      'how.p7.desc': 'Собирает финальный отчёт из блоков. Записывает атомарные тезисы в findings/FN.md для переиспользования.',
+
+      'inside.tag': '§ 03 · каталог',
+      'inside.title': 'Кураторский каталог.<br>Авто-валидация раз в неделю.',
+      'inside.intro': '280+ статистических источников, 30+ API endpoints, 29 именованных каналов, 75 блоков отчёта. Еженедельный cron в GitHub Actions проверяет endpoints и подхватывает новые из awesome-листов.',
+      'inside.f1.num': '75 / 10 категорий',
+      'inside.f1.title': 'Блоки отчёта',
+      'inside.f1.desc': 'Переиспользуемые секции с шаблонами, анти-паттернами и правилами композиции. У каждого блока — фиксированная форма; отчёт собирается перечислением блоков.',
+      'inside.f1.more': '+71 ещё',
+      'inside.f2.num': '29 стратегий',
+      'inside.f2.title': 'Каналы поиска',
+      'inside.f2.desc': 'Именованные стратегии поиска с шаблонами запросов и protocol-ами обхода paywall. У каждого канала описано: что покрывает, где ломается.',
+      'inside.f2.more': '+25 ещё',
+      'inside.f3.num': '280+ источников · 33 категории',
+      'inside.f3.title': 'Стат-источники',
+      'inside.f3.desc': 'Кураторский каталог: URL · Access · Quality · Limitations · Combine-with · Fallback. 14 кросс-индустриальных + 19 отраслевых категорий.',
+      'inside.f3.more': '+276 ещё',
+      'inside.f4.num': '6 + custom',
+      'inside.f4.title': 'Жанры отчёта',
+      'inside.f4.desc': 'Жанр определяет структуру. 5 стандартных пресетов покрывают большинство случаев. Custom собирается под конкретный вопрос из библиотеки блоков.',
+      'inside.f5.num': '30+ endpoints',
+      'inside.f5.title': 'Каталог API',
+      'inside.f5.desc': 'В приоритете free no-auth API. Аутентификация только через env vars — скилл никогда не просит ключи в чате. Документированные fallback-стратегии.',
+      'inside.f5.more': '+26 ещё',
+      'inside.f6.num': 'еженедельный cron',
+      'inside.f6.title': 'Авто-валидация',
+      'inside.f6.desc': 'GitHub Actions проверяет endpoints и подхватывает новые источники из upstream awesome-листов. Авто-PR при мёртвых endpoints. Отчёты — в отдельной ветке.',
+
+      'install.tag': '§ 04 · установка',
+      'install.title': 'Установка за 30 секунд.',
+      'install.intro': 'Работает в Claude Code (CLI), в Claude Desktop с включёнными Skills и в любой другой LLM через ручную загрузку контекста.',
+      'install.c1.tag': '// рекомендуется',
+      'install.c1.title': 'Claude Code (CLI)',
+      'install.c1.b1': 'Напиши "deep research" или /deep-research',
+      'install.c1.b2': 'Работает во всех проектах',
+      'install.c1.b3': 'Автозагрузка через progressive disclosure',
+      'install.c2.tag': '// .skill bundle',
+      'install.c2.title': 'Claude Desktop',
+      'install.c2.b1': 'Загрузи через Settings → Skills → Add',
+      'install.c2.b2': 'Появится в Customize-панели',
+      'install.c2.b3': 'Триггеры те же, что и в CLI',
+      'install.c3.tag': '// ручная загрузка',
+      'install.c3.title': 'Другие LLM',
+      'install.c3.b1': 'Codex, Gemini, локальные модели',
+      'install.c3.b2': 'Суб-агенты → отдельные сессии чата',
+      'install.c3.b3': 'Адаптеры — приветствуются в PR',
+
+      'faq.tag': '§ 05 · вопросы',
+      'faq.title': 'Частые вопросы.',
+      'faq.q1': 'Чем отличается от ChatGPT Deep Research или Perplexity?',
+      'faq.a1': 'Это продукты — закрытый UI, фиксированный flow, непрозрачный отбор источников. Это — открытая методология: ты контролируешь каждый шаг, протокол это markdown, который можно форкнуть, каталог источников твой и его можно расширять. ChatGPT и Perplexity к тому же не сохраняют источники как отдельные файлы, не делают явную триангуляцию, не запускают adversarial pass и не оставляют переиспользуемых атомарных тезисов.',
+      'faq.q2': 'Работает без Claude Code CLI?',
+      'faq.a2': 'Да — в Claude Desktop с включёнными Skills. Также работает вручную в любой LLM: загружаешь markdown-файлы в контекст. Параллелизм суб-агентов придётся симулировать отдельными сессиями чата на каждый подвопрос.',
+      'faq.q3': 'Зачем столько файлов? Не перебор?',
+      'faq.a3': 'Для вопроса на 5 минут вида «что там нового про X» — да, перебор. Поэтому есть режим <code>shallow</code> (5–7 источников, без суб-агентов, ~15 минут). Полная машинерия — для режимов <code>medium</code> (~час) и <code>deep</code> (~3 часа), когда нужно использовать вывод для решения. Файл-на-источник — это и есть механизм переиспользования: один ресёрч часто кормит 3–5 будущих.',
+      'faq.q4': 'А если нет CLAUDE.md или контекста проекта?',
+      'faq.a4': 'Скилл определяет контекст по 3 уровням: явный (CLAUDE.md с research_root) → автодетект (pyproject.toml, package.json) → fallback (<code>~/deep-research/</code>). Нет проекта — не проблема.',
+      'faq.q5': 'Это просто prompt engineering?',
+      'faq.a5': 'Это структурированная методология плюс кураторский каталог плюс переиспользуемые шаблоны плюс автоматизация. Workflow из 7 фаз дисциплинирует. 280+ стат-источников — это куратный домен. 75 блоков складываются в любую форму отчёта. Авто-валидация раз в неделю держит каталог живым. 25+ awesome-листов дают слой discovery. Промпты — это implementation detail, не ценность.',
+      'faq.q6': 'Можно использовать коммерчески?',
+      'faq.a6': 'Да — лицензия MIT. Используй, модифицируй, встраивай в продукты. Атрибуция приветствуется, но не обязательна.',
+
+      'cta.title': 'Поставь звезду.<br><span class="marker">Используй.</span><br>Расширяй.',
+      'cta.desc': 'Каталог растёт через вклад комьюнити. Самый простой путь: добавь известный тебе стат-источник в нужный отраслевой файл. PR на 15 минут — добро пожаловать.',
+      'cta.btn_primary': 'поставить звезду',
+      'cta.btn_secondary': 'как контрибьютить',
+
+      'footer.line1': 'DEEP-RESEARCH v2.0 · Сделал ivanterescheenko-ai · Лицензия MIT',
+      'footer.spec': 'Спека скилла',
+      'footer.contrib': 'Контрибьютинг',
+      'footer.issues': 'Issues',
+    }
+  };
+
+  function applyLanguage(lang) {
+    const dict = translations[lang];
+    if (!dict) return;
+
+    // Update <html lang> for SEO / a11y
+    document.documentElement.lang = lang;
+    document.documentElement.dataset.lang = lang;
+
+    // textContent updates
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = dict[key];
+      if (val === undefined) return;
+
+      const attrName = el.getAttribute('data-i18n-attr');
+      if (attrName) {
+        el.setAttribute(attrName, val);
+      } else {
+        el.textContent = val;
+      }
+    });
+
+    // innerHTML updates (for keys containing HTML markup)
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      const val = dict[key];
+      if (val !== undefined) el.innerHTML = val;
+    });
+
+    // Toggle active class on language buttons
+    document.querySelectorAll('[data-lang-btn]').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === lang);
+    });
+
+    // Persist choice
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+
+  // Wire up switcher buttons
+  document.querySelectorAll('[data-lang-btn]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyLanguage(btn.getAttribute('data-lang-btn'));
+    });
+  });
+
+  // Initial language: localStorage → browser → default 'en'
+  (function initLanguage() {
+    let lang = 'en';
+    try {
+      const stored = localStorage.getItem('lang');
+      if (stored && translations[stored]) {
+        lang = stored;
+      } else if ((navigator.language || '').toLowerCase().startsWith('ru')) {
+        lang = 'ru';
+      }
+    } catch (e) {}
+    applyLanguage(lang);
+  })();
+
+  // ──────────────── FAQ toggle ────────────────
   document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', () => {
       q.parentElement.classList.toggle('open');
